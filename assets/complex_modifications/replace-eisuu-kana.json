@@ -1,0 +1,129 @@
+{
+    "title": "replace japanese_eisuu and japanese_kana",
+    "rules": [
+        {
+            "description": "Kana + N to Kana",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_kana",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "modifier_japanese_kana",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "modifier_japanese_kana",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "modifier_japanese_kana",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Eisuu + V to Eisuu",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_eisuu",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "modifier_japanese_eisuu",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "modifier_japanese_eisuu",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "v",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "variable_if",
+                            "name": "modifier_japanese_kana",
+                            "value": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
