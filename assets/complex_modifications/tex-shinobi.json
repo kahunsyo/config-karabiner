@@ -1,0 +1,199 @@
+{
+  "title": "TEX Shinobi",
+  "rules": [
+    {
+      "description": "TEX Shinobi Base Mapping: to Apple Layout",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option"
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_pc_nfer"
+          },
+          "to": [
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_pc_xfer"
+          },
+          "to": [
+            {
+              "key_code": "japanese_kana"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command"
+          },
+          "to": [
+            {
+              "key_code": "left_option"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_pc_katakana"
+          },
+          "to": [
+            {
+              "key_code": "right_command"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_control"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "description": "TEX Shinobi",
+                  "product_id": 1031,
+                  "vendor_id": 1241
+                },
+                {
+                  "description": "TEX Shinobi Bluetooth",
+                  "device_address": "c4-60-bb-f1-8e-a5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
