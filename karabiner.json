@@ -1929,6 +1929,24 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 1031,
+                        "vendor_id": 1241
+                    },
+                    "ignore": true
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 2,
+                        "vendor_id": 7247
+                    },
+                    "ignore": true
+                }
+            ],
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
