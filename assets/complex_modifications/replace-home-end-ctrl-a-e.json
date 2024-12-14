@@ -1,0 +1,40 @@
+{
+    "title": "replace home/end to ctrl + a/e in specific apps",
+    "rules": [
+        {
+            "description": "replace home/end to ctrl + a/e in specific apps",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "home",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": {
+                                "mandatory": [
+                                    "left_control"
+                                ],
+                                "optional": []
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.microsoft\\.VSCode$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

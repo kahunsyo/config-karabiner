@@ -1,0 +1,74 @@
+{
+  "title": "double tap japanese_eisuu and japanese_kana",
+  "rules": [
+    {
+      "description": "double tap japanese_kana to one top japanese_kana",
+      "manipulators": [
+        {
+          "description": "japanese_kana ×2 ",
+          "from": {
+            "key_code": "japanese_kana",
+            "modifiers": {
+              "mandatory": [],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "japanese_kana TAPPED",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "key_code": "japanese_kana"
+            }
+          ]
+        },
+        {
+          "description": "japanese_kana ×1 ",
+          "from": {
+            "key_code": "japanese_kana",
+            "modifiers": {
+              "mandatory": [],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "type": "basic",
+          "to_delayed_action": {
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "japanese_kana TAPPED",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "japanese_kana TAPPED",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "japanese_kana TAPPED",
+                "value": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

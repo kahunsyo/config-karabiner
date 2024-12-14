@@ -1,0 +1,63 @@
+{
+    "title": "Disable japanese_eisuu, japanese_kana",
+    "rules": [
+        {
+            "description": "Disable japanese_eisuu key",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_eisuu",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to_if_alone": {
+                        "key_code": "out"
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Disable japanese_kana key",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "japanese_kana",
+                        "modifiers": {
+                            "mandatory": [],
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "japanese_kana"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 2000
+                    },
+                    "to_if_alone": [
+                        {
+                            "key_code": "out"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
