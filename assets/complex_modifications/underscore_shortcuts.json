@@ -130,6 +130,90 @@
       ]
     },
     {
+      "description": "Underscore + Shift + S to open Slack with jump channel window",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "international1",
+            "modifiers": {
+              "mandatory": [],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "international1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a '/Applications/Slack.app'"
+            },
+            {
+              "hold_down_milliseconds": 100,
+              "key_code": "vk_none"
+            },
+            {
+              "key_code": "k",
+              "modifiers": [
+                "left_command"
+              ]
+            },
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "custom_modifier",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Underscore + V to open VS Code",
       "manipulators": [
         {
