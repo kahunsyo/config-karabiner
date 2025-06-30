@@ -768,7 +768,7 @@
       ]
     },
     {
-      "description": "Underscore + C to open CyCal",
+      "description": "Underscore + C to open ChatGPT",
       "manipulators": [
         {
           "type": "basic",
@@ -819,6 +819,77 @@
             "key_code": "c",
             "modifiers": {
               "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open -a '/Applications/ChatGPT.app'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "custom_modifier",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Underscore + Shift + C to open Cycal",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "international1",
+            "modifiers": {
+              "mandatory": [],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "international1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
             }
           },
           "to": [

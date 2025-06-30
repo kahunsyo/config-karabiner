@@ -1401,6 +1401,112 @@
                         ]
                     },
                     {
+                        "description": "Underscore + C to open ChatGPT",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "international1",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "international1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "custom_modifier",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": [] }
+                                },
+                                "to": [{ "shell_command": "open -a '/Applications/ChatGPT.app'" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Underscore + Shift + C to open Cycal",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "international1",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "international1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "custom_modifier",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.dnjnbohecpglgllohmpannjapfmjedji" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Underscore + V to open VS Code",
                         "manipulators": [
                             {
@@ -1820,59 +1926,6 @@
                                     "modifiers": { "mandatory": [] }
                                 },
                                 "to": [{ "shell_command": "open -a '/Applications/zoom.us.app/Contents/MacOS/zoom.us'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Underscore + C to open CyCal",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [{ "is_built_in_keyboard": true }],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "international1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "international1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "custom_modifier",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "mandatory": [] }
-                                },
-                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.dnjnbohecpglgllohmpannjapfmjedji" } } }],
                                 "type": "basic"
                             }
                         ]
