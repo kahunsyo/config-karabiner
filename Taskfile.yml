@@ -1,0 +1,28 @@
+version: "3"
+
+tasks:
+  convert-to-yaml:
+    desc: Convert complex modifications to YAML format
+    set:
+      - e
+      - x
+    cmds:
+      - |
+        mkdir -p assets/complex_modifications/yaml
+      - |
+        ls assets/complex_modifications/*.json | while read file; do
+          base=$(basename -s .json "$file")
+          yq -o yaml "$file" > "assets/complex_modifications/yaml/${base}.yaml"
+        done
+
+  convert-to-json:
+    desc: Convert YAML files back to JSON format
+    set:
+      - e
+      - x
+    cmds:
+      - |
+        ls assets/complex_modifications/yaml/*.yaml | while read file; do
+          base=$(basename -s .yaml "$file")
+          yq -o json "$file" > "assets/complex_modifications/${base}.json"
+        done
