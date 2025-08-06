@@ -1,0 +1,48 @@
+title: Disable Keys
+rules:
+  - description: Disable Left Command + Q
+    manipulators:
+      - type: basic
+        from:
+          key_code: q
+          modifiers:
+            mandatory:
+              - left_command
+        to:
+          - key_code: vk_none
+  - description: Disable Right Command + Q
+    manipulators:
+      - type: basic
+        from:
+          key_code: q
+          modifiers:
+            mandatory:
+              - right_command
+        to:
+          - key_code: vk_none
+  - description: Disable Left Command + Shift + Q # MacOS Logout
+    manipulators:
+      - type: basic
+        from:
+          key_code: q
+          modifiers:
+            mandatory:
+              - left_command
+              - shift
+        to:
+          - key_code: vk_none
+  - description: Disable Left Command + Shift + C in Microsoft Edge
+    manipulators:
+      - type: basic
+        from:
+          key_code: c
+          modifiers:
+            mandatory:
+              - left_command
+              - shift
+        to:
+          - key_code: vk_none
+        conditions:
+          - type: frontmost_application_if
+            bundle_identifiers:
+              - ^com\.microsoft\.edgemac.* # Microsoft Edge and Web apps
