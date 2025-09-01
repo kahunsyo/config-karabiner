@@ -1,4 +1,4 @@
-title: 'Underscore Shortcuts : Works in JIS keyboard'
+title: "Underscore Shortcuts : Works in JIS keyboard"
 rules:
   - description: Underscore + E to open Microsoft Edge
     manipulators:
@@ -517,6 +517,77 @@ rules:
           - software_function:
               open_application:
                 bundle_identifier: com.microsoft.edgemac.app.mgjcfhfflbgkofbnllnnbkondbfpionf
+        conditions:
+          - type: variable_if
+            name: custom_modifier
+            value: 1
+  - description: Underscore + D to start dictation
+    manipulators:
+      - type: basic
+        from:
+          key_code: international1
+          modifiers:
+            mandatory: []
+            optional:
+              - any
+        to:
+          - set_variable:
+              name: custom_modifier
+              value: 1
+        to_after_key_up:
+          - set_variable:
+              name: custom_modifier
+              value: 0
+        to_if_alone:
+          - key_code: international1
+        conditions:
+          - type: device_if
+            identifiers:
+              - is_built_in_keyboard: true
+      - type: basic
+        from:
+          key_code: d
+          modifiers:
+            mandatory: []
+        to:
+          - consumer_key_code: dictation
+        conditions:
+          - type: variable_if
+            name: custom_modifier
+            value: 1
+  - description: Underscore + Shift + E to emoji
+    manipulators:
+      - type: basic
+        from:
+          key_code: international1
+          modifiers:
+            mandatory: []
+            optional:
+              - any
+        to:
+          - set_variable:
+              name: custom_modifier
+              value: 1
+        to_after_key_up:
+          - set_variable:
+              name: custom_modifier
+              value: 0
+        to_if_alone:
+          - key_code: international1
+        conditions:
+          - type: device_if
+            identifiers:
+              - is_built_in_keyboard: true
+      - type: basic
+        from:
+          key_code: e
+          modifiers:
+            mandatory:
+              - shift
+        to:
+          - key_code: e
+            modifiers:
+              - fn
         conditions:
           - type: variable_if
             name: custom_modifier
