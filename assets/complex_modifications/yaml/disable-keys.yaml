@@ -31,6 +31,17 @@ rules:
               - shift
         to:
           - key_code: vk_none
+  - description: Disable Right Command + H # MacOS Hide Window
+    manipulators:
+      - type: basic
+        from:
+          key_code: h
+          modifiers:
+            mandatory:
+              - right_command
+        to:
+          - key_code: vk_none
+
   - description: Disable Left Command + Shift + C in Microsoft Edge
     manipulators:
       - type: basic
