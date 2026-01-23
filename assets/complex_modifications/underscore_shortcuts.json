@@ -1418,6 +1418,77 @@
       ]
     },
     {
+      "description": "Underscore + Shift + N to open Notion with Meeting Note page",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "international1",
+            "modifiers": {
+              "mandatory": [],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "custom_modifier",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "international1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "is_built_in_keyboard": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open 'notion://www.notion.so/cyberagent-group/2d2b68753fe980e2b6e9c71bfb1dfde5?v=2d2b68753fe980ad93a4000c222e59c2&source=copy_link'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "custom_modifier",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Underscore + 1 to move cursor to first screen",
       "manipulators": [
         {

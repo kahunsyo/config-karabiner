@@ -2435,6 +2435,59 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Underscore + Shift + N to open Notion with Meeting Note page",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "international1",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "international1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "custom_modifier",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
+                                "to": [{ "shell_command": "open 'notion://www.notion.so/cyberagent-group/2d2b68753fe980e2b6e9c71bfb1dfde5?v=2d2b68753fe980ad93a4000c222e59c2&source=copy_link'" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
