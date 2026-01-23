@@ -344,13 +344,16 @@
                         ]
                     },
                     {
-                        "description": "Disable Left Command + P in Microsoft Edge",
+                        "description": "Disable Left Command + P in some apps",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.edgemac.*"
+                                            "^com\\.microsoft\\.edgemac.*",
+                                            "^com\\.google\\.Chrome",
+                                            "^com\\.googlecode\\.iterm2",
+                                            "^abnerworks\\.Typora"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

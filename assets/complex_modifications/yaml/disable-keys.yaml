@@ -57,7 +57,7 @@ rules:
           - type: frontmost_application_if
             bundle_identifiers:
               - ^com\.microsoft\.edgemac.* # Microsoft Edge and Web apps
-  - description: Disable Left Command + P in Microsoft Edge
+  - description: Disable Left Command + P in some apps
     manipulators:
       - type: basic
         from:
@@ -71,6 +71,9 @@ rules:
           - type: frontmost_application_if
             bundle_identifiers:
               - ^com\.microsoft\.edgemac.* # Microsoft Edge and Web apps
+              - ^com\.google\.Chrome # Google Chrome
+              - ^com\.googlecode\.iterm2 # iTerm2
+              - ^abnerworks\.Typora # Typora
   - description: Disable Left Command + D in Microsoft Edge
     manipulators:
       - type: basic
