@@ -550,7 +550,7 @@ rules:
           modifiers:
             mandatory: []
         to:
-          - consumer_key_code: dictation
+          - key_code: fn
         conditions:
           - type: variable_if
             name: custom_modifier
