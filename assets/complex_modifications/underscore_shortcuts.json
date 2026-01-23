@@ -823,7 +823,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a '/Applications/ChatGPT.app'"
+              "shell_command": "open -a '/Users/s23492/Applications/Edge Apps.localized/ChatGPT.app'"
             }
           ],
           "conditions": [
