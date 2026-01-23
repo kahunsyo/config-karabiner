@@ -236,7 +236,7 @@
                                     "key_code": "d",
                                     "modifiers": { "mandatory": [] }
                                 },
-                                "to": [{ "consumer_key_code": "dictation" }],
+                                "to": [{ "key_code": "fn" }],
                                 "type": "basic"
                             }
                         ]
@@ -1748,59 +1748,6 @@
                         ]
                     },
                     {
-                        "description": "Underscore + C to open ChatGPT",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [{ "is_built_in_keyboard": true }],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "international1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "international1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "custom_modifier",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "mandatory": [] }
-                                },
-                                "to": [{ "shell_command": "open -a '/Applications/ChatGPT.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Underscore + Shift + C to open Cycal",
                         "manipulators": [
                             {
@@ -1849,6 +1796,59 @@
                                     "modifiers": { "mandatory": ["shift"] }
                                 },
                                 "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.dnjnbohecpglgllohmpannjapfmjedji" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Underscore + C to open ChatGPT",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "international1",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "international1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "custom_modifier",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "mandatory": [] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.cadlkienfkclaiaibeoongdcgmdikeeg" } } }],
                                 "type": "basic"
                             }
                         ]
@@ -2172,60 +2172,6 @@
                         ]
                     },
                     {
-                        "description": "Underscore + F to open Focus To-Do",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [{ "is_built_in_keyboard": true }],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "international1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "international1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "custom_modifier",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f",
-                                    "modifiers": { "mandatory": [] }
-                                },
-                                "to": [{ "shell_command": "open -a '/Applications/WebPomodoro.app/Contents/MacOS/WebPomodoro'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Underscore + Z to open Zoom",
                         "manipulators": [
                             {
@@ -2279,7 +2225,60 @@
                         ]
                     },
                     {
-                        "description": "Underscore + G to open Gmail",
+                        "description": "Underscore + Shift + G to open Gmail",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "international1",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "custom_modifier",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "international1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "custom_modifier",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.fmgjjmmmlfnkbppncabfkddbjimcfncm" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Underscore + G to open Gemini",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2326,61 +2325,7 @@
                                     "key_code": "g",
                                     "modifiers": { "mandatory": [] }
                                 },
-                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.fmgjjmmmlfnkbppncabfkddbjimcfncm" } } }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Underscore + H to open Harmonica",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [{ "is_built_in_keyboard": true }],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "international1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "custom_modifier",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "international1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "custom_modifier",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": { "mandatory": [] }
-                                },
-                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.mgjcfhfflbgkofbnllnnbkondbfpionf" } } }],
+                                "to": [{ "software_function": { "open_application": { "bundle_identifier": "com.microsoft.edgemac.app.caidcmannjgahlnbpmidmiecjcoiiigg" } } }],
                                 "type": "basic"
                             }
                         ]
